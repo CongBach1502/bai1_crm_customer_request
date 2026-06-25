@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="customer_view_tree" model="ir.ui.view">
+        <field name="name">customer.view.tree</field>
+        <field name="model">crm.customer.request</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0" delete="0">
+                <field name="product_id" 
+                options ="{'no_create':True,
+                'no_create_edit':True,
+                'no_open':True}"/>
+                <field name="opportunity_id" 
+                options ="{'no_create':True,
+                'no_create_edit':True,
+                'no_open':True}"/>
+                <field name="date" />
+                <field name="description" />
+                <field name="qty" />
+            </tree>
+        </field>
+    </record>
+<record id="customer_view_form" model="ir.ui.view">
+    <field name="name">customer.view.form</field>
+    <field name="model">crm.customer.request</field>
+    <field name="arch" type="xml">
+        <form create="0" edit="0" delete="0">
+            <sheet>
+                <group>
+                    <field name="product_id" 
+                     options ="{'no_create':True,
+                'no_create_edit':True,
+                'no_open':True}" />
+                <field name="opportunity_id" 
+                options ="{'no_create':True,
+                'no_create_edit':True,
+                'no_open':True}" />
+                <field name="date" />
+                <field name="description" />
+                <field name="qty" />
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+<record id="customer_action" model="ir.actions.act_window">
+    <field name="name">Action customer</field>
+    <field name="res_model">crm.customer.request</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<menuitem
+    id="customer_request_menu"
+    name="Customer Request"
+    parent="crm.crm_menu_root"
+    action="customer_action"
+   />
+</odoo>
