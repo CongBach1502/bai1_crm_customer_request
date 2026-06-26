@@ -13,8 +13,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/customer_request_views.xml',
-        'views/crm_lead_views.xml'
-        'wizard/import_request_wizard_views.xml',
+        'views/crm_lead_views.xml',
+       
     ],
   'installable': True,
 'application': True,

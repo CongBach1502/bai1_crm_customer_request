@@ -24,18 +24,7 @@ class Crmlead(models.Model):
             lead.expected_revenue=sum(line.qty * line.product_id.list_price
             for line in lead.request_ids
             )
-    def action_open_import_wizard(self):
-     self.ensure_one()
-
-     return {
-        'type': 'ir.actions.act_window',
-        'res_model': 'import.request.wizard',
-        'view_mode': 'form',
-        'target': 'new',
-        'context': {
-            'default_lead_id': self.id,
-        }
-    }
+   
     def _prepare_opportunity_quotation_context(self):
      context = super()._prepare_opportunity_quotation_context()
 

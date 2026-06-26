@@ -5,12 +5,7 @@
    <field name="inherit_id" ref="crm.crm_lead_view_form"/>
    <field name="name">crm.lead.form.inherit.customer.request</field>
     <field name="arch" type="xml">
-     <xpath expr="//header" position="inside">
-                <button name="action_open_import_wizard"
-                        string="Import Requests"
-                        type="object"
-                        class="btn-primary"/>
-            </xpath>
+    
       <xpath expr="//notebook" position="inside">
         <page  string="Customer Resquest">
             <field name="request_ids">
