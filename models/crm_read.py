@@ -39,3 +39,14 @@ class Crmlead(models.Model):
      context['default_order_line'] = order_lines
 
      return context
+    def action_open_import_wizard(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Import Requests',
+            'res_model': 'crm.request.import.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_lead_id': self.id,
+            },
+        }
